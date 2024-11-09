@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: d65b73ee98c918654a1576c24af21721b6b675de385f427ebc1a98be317e72a1
 
 build:
@@ -34,6 +34,7 @@ test:
     - skfolio
   requires:
     - pip
+    - python 3.10
   commands:
     - pip check
 
