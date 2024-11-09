@@ -1,13 +1,13 @@
 {% set name = "skfolio" %}
-{% set version = "0.5.0" %}
+{% set version = "0.5.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 78bd6dce60cac0ca07dfd4e7de26dd1b45869b680aa0873e87d4a2283eed4665
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: d65b73ee98c918654a1576c24af21721b6b675de385f427ebc1a98be317e72a1
 
 build:
   number: 0
@@ -34,6 +34,7 @@ test:
     - skfolio
   requires:
     - pip
+    - python 3.10
   commands:
     - pip check
 
