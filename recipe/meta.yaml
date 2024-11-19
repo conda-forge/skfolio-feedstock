@@ -1,5 +1,6 @@
 {% set name = "skfolio" %}
 {% set version = "0.6.0" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -16,11 +17,11 @@ build:
 
 requirements:
   host:
-    - python >=3.10
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python >=3.10
+    - python >={{ python_min }}
     - numpy >=1.23.4
     - scipy >=1.8.0
     - pandas >=1.4.1
@@ -34,7 +35,7 @@ test:
     - skfolio
   requires:
     - pip
-    - python 3.10
+    - python {{ python_min }}
   commands:
     - pip check
 
