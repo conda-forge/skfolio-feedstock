@@ -37,8 +37,9 @@ test:
   requires:
     - pip
     - python {{ python_min }}
-  commands:
-    - pip check
+  # Not working with cvxpy
+  # commands:
+  #   - pip check
 
 about:
   home: https://github.com/skfolio/skfolio
