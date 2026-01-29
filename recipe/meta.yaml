@@ -1,5 +1,5 @@
 {% set name = "skfolio" %}
-{% set version = "0.15.3" %}
+{% set version = "0.15.4" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: bd8da43e54d08f3a042dfc3c568f47527abe01cc016f8713745747450ff558d8
+  sha256: ed4384c281bf4d3623fbd1b1533218a78950a40412189629eb748909461882ed
 
 build:
   number: 0
