@@ -1,5 +1,5 @@
 {% set name = "skfolio" %}
-{% set version = "1.2.8" %}
+{% set version = "1.3.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0fb43938a9c6e95b2e7e911adeb39980d2025c9866e19dc12f129d3b0e621529
+  sha256: 5224c575fabe0568a7aee81c5971495f00e87a4ec585ef8f1c51a2a993f774d7
 
 build:
   number: 0
@@ -22,14 +22,14 @@ requirements:
     - setuptools
   run:
     - python >={{ python_min }}
-    - numpy >=1.23.4
+    - numpy >=1.24.0
     - scipy >=1.15.2
-    - pandas >=1.4.1
+    - pandas >=2.1.0
     - cvxpy-base >=1.5.0
-    - clarabel >=0.9.0
+    - clarabel >=0.10.0
     - scikit-learn >=1.6.0
     - joblib >=1.3.2
-    - plotly >=5.22.0
+    - plotly >=6.0.0
 
 test:
   imports:
