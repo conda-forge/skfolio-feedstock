@@ -1,0 +1,59 @@
+schema_version: 1
+
+context:
+  name: skfolio
+  version: "1.3.4"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: b380a20f651821743c72881a7763aeb3dee93168f89f8f76f1938dc1dd1b184b
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - numpy >=1.24.0
+    - scipy >=1.15.2
+    - pandas >=2.1.0
+    - cvxpy-base >=1.5.0
+    - clarabel >=0.10.0
+    - scikit-learn >=1.6.0
+    - joblib >=1.3.2
+    - plotly >=6.0.0
+
+tests:
+  - python:
+      imports:
+        - skfolio
+      pip_check: false
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+
+about:
+  license: BSD-3-Clause
+  license_file: LICENSE
+  summary: Python library for portfolio optimization built on top of scikit-learn
+  description: Python library for portfolio optimization built on top of scikit-learn
+  homepage: https://github.com/skfolio/skfolio
+  repository: https://github.com/skfolio/skfolio
+
+extra:
+  recipe-maintainers:
+    - timkpaine
