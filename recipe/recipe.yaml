@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: skfolio
-  version: "1.4.12"
+  version: "1.7.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: 3603030b147bffecc7b0df62fdb97cf54f98c52b0b8130ffb593ee4066fff41c
+  sha256: 80fa65ac6caa1ff3c301bf5aaf6c2609c44815573aef682a355682af9244704b
 
 build:
   number: 0
